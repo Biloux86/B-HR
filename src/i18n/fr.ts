@@ -11,9 +11,9 @@ export const fr = {
       my: "Espace client",
     },
     cta: {
-      quote: "Demander un devis gratuit",
+      quote: "Demandez votre devis gratuit",
       getQuote: "Obtenir un devis",
-      viewServices: "Voir les services",
+      viewServices: "Découvrir nos services",
       my: "My B‑HR",
     },
     header: {
@@ -22,11 +22,52 @@ export const fr = {
       maps: "https://maps.google.com",
     },
     home: {
-      quick: [
-        { t: "Gestion de la paie", d: "Calculs, fiches, déclarations ONSS/Dimona.", to: "services" },
-        { t: "Conseils juridiques", d: "Droit social & conventions collectives.", to: "services" },
-        { t: "Outils digitaux", d: "Plateforme sécurisée, accès 24/7.", to: "services" },
+      title: "B-HR | Votre secrétariat social simple, rapide et transparent",
+      subtitle: "La paie en toute confiance",
+      intro: "Chez B-HR, nous simplifions votre administration sociale avec :",
+      features: [
+        "⚡ Fiches de paie en moins de 48h.",
+        "💶 Un prix clair par travailleur, tout compris.",
+        "✅ Aucun frais caché : C4, bilans sociaux et autres démarches sont inclus dans le prix.",
+        "🧾 Facturation facile et transparente.",
       ],
+      why: {
+        title: "🚀 Pourquoi choisir B-HR ?",
+        points: [
+          "Rapidité garantie : vos fiches de paie prêtes en moins de 48 heures.",
+          "Simplicité : un seul prix par travailleur, sans supplément.",
+          "Transparence : pas de mauvaises surprises sur vos factures.",
+          "Accompagnement : nous vous guidons dans toutes vos obligations sociales (ONSS, Dimona, bilans sociaux, etc.).",
+        ],
+      },
+      services: {
+        title: "📑 Nos services",
+        items: [
+          "Gestion complète de la paie.",
+          "Déclarations ONSS et Dimona.",
+          "Conseils juridiques et RH.",
+          "Formations adaptées aux PME.",
+          "Outils digitaux pour gagner du temps.",
+        ],
+        cta: "Découvrir nos services",
+      },
+      pricing: {
+        title: "💶 Tarifs 100% transparents",
+        intro: "Un prix unique par travailleur, tout est inclus :",
+        items: [
+          "✔️ Fiches de paie",
+          "✔️ Déclarations ONSS/Dimona",
+          "✔️ Documents sociaux (C4, bilan social, etc.)",
+          "✔️ Support et conseils",
+        ],
+        cta: "Demandez votre devis gratuit",
+      },
+      testimonial:
+        "Enfin un secrétariat social qui va droit au but : paie rapide, prix clair, pas de frais cachés. Merci B-HR !",
+      contact: {
+        cta: "Contactez-nous",
+        closing: "Simplifiez la gestion sociale de votre entreprise dès aujourd’hui.",
+      },
     },
     services: {
       title: "Des solutions complètes pour votre gestion sociale",

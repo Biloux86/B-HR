@@ -11,9 +11,9 @@ export const nl = {
       my: "Klantenruimte",
     },
     cta: {
-      quote: "Gratis offerte",
+      quote: "Vraag uw gratis offerte aan",
       getQuote: "Offerte",
-      viewServices: "Diensten bekijken",
+      viewServices: "Ontdek onze diensten",
       my: "My B‑HR",
     },
     header: {
@@ -22,11 +22,52 @@ export const nl = {
       maps: "https://maps.google.com",
     },
     home: {
-      quick: [
-        { t: "Payroll", d: "Berekening, fiches, RSZ/Dimona.", to: "services" },
-        { t: "Juridisch advies", d: "Sociaal recht & CAO.", to: "services" },
-        { t: "Digitale tools", d: "Veilig platform, 24/7.", to: "services" },
+      title: "B-HR | Uw sociaal secretariaat eenvoudig, snel en transparant",
+      subtitle: "Lonen in alle vertrouwen",
+      intro: "Bij B-HR vereenvoudigen we uw sociale administratie met:",
+      features: [
+        "⚡ Loonfiches in minder dan 48u.",
+        "💶 Een duidelijke prijs per werknemer, alles inbegrepen.",
+        "✅ Geen verborgen kosten: C4, sociale balansen en andere formaliteiten inbegrepen.",
+        "🧾 Eenvoudige en transparante facturatie.",
       ],
+      why: {
+        title: "🚀 Waarom kiezen voor B-HR?",
+        points: [
+          "Gegarandeerde snelheid: loonfiches klaar binnen 48 uur.",
+          "Eenvoud: één prijs per werknemer, zonder supplement.",
+          "Transparantie: geen verrassingen op uw facturen.",
+          "Begeleiding: wij gidsen u in al uw sociale verplichtingen (RSZ, Dimona, sociale balans, ...).",
+        ],
+      },
+      services: {
+        title: "📑 Onze diensten",
+        items: [
+          "Volledige loonadministratie.",
+          "RSZ- en Dimona-aangiften.",
+          "Juridisch en HR-advies.",
+          "Opleidingen voor kmo’s.",
+          "Digitale tools om tijd te winnen.",
+        ],
+        cta: "Ontdek onze diensten",
+      },
+      pricing: {
+        title: "💶 100% transparante tarieven",
+        intro: "Eén prijs per werknemer, alles inbegrepen:",
+        items: [
+          "✔️ Loonfiches",
+          "✔️ RSZ/Dimona-aangiften",
+          "✔️ Sociale documenten (C4, sociale balans, ...)",
+          "✔️ Support en advies",
+        ],
+        cta: "Vraag uw gratis offerte aan",
+      },
+      testimonial:
+        "Eindelijk een sociaal secretariaat dat to the point is: snelle loonverwerking, duidelijke prijs, geen verborgen kosten. Dank je B-HR!",
+      contact: {
+        cta: "Contacteer ons",
+        closing: "Vereenvoudig vandaag nog het sociaal beheer van uw bedrijf.",
+      },
     },
     services: {
       title: "Complete oplossingen",
