@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Paramètres</h2>
+<section class="card">
+    <form method="post" action="/admin">
+        <div class="grid">
+            <label>Coefficient Article 60
+                <input type="number" step="0.01" name="coef_article60" required value="{{ params.coef_article60 }}">
+            </label>
+            <label>Coefficient Contractuel
+                <input type="number" step="0.01" name="coef_contractuel" required value="{{ params.coef_contractuel }}">
+            </label>
+            <label>Plafond saisie d'avance
+                <input type="number" step="0.01" name="plafond_saisie" required value="{{ params.plafond_saisie }}">
+            </label>
+            <label>Taux avance (net estimé)
+                <input type="number" step="0.01" name="taux_avance" required value="{{ params.taux_avance }}">
+            </label>
+        </div>
+        <button type="submit">Enregistrer</button>
+    </form>
+</section>
+{% endblock %}

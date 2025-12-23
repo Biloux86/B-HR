@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    color: #1d1d1d;
+}
+
+header {
+    background: #1f3c88;
+    color: white;
+    padding: 1rem 0;
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+main {
+    padding: 2rem 0 3rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-bottom: 1rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+}
+
+input, select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #1f3c88;
+    color: white;
+    cursor: pointer;
+}
+
+button.danger {
+    background: #c62828;
+}
+
+a.link {
+    color: #1f3c88;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.inline {
+    display: inline;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.6rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.alert.error {
+    background: #ffebee;
+    color: #b71c1c;
+}
+
+.alert.success {
+    background: #e8f5e9;
+    color: #1b5e20;
+}
+
+.warn {
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+@media print {
+    header, nav, button, .card form, .link {
+        display: none;
+    }
+    body {
+        background: white;
+    }
+    .printable {
+        box-shadow: none;
+    }
+}

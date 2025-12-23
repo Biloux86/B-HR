@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Comparatif brut</h2>
+<section class="card">
+    <table>
+        <thead>
+            <tr>
+                <th>Mois</th>
+                <th>Employé</th>
+                <th>Brut attendu</th>
+                <th>Brut encodé</th>
+                <th>Écart</th>
+                <th>Commentaire</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in comparaisons %}
+            <tr>
+                <td>{{ item.row.mois }}</td>
+                <td>{{ item.row.nom }} {{ item.row.prenom }}</td>
+                <td>{{ "%.2f"|format(item.brut_attendu) }}</td>
+                <td>{{ "%.2f"|format(item.row.brut_encode) }}</td>
+                <td class="{% if item.ecart != 0 %}warn{% endif %}">{{ "%.2f"|format(item.ecart) }}</td>
+                <td>{{ item.row.commentaire or "-" }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

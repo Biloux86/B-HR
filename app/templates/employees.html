@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Employés</h2>
+<section class="card">
+    <h3>Ajouter un employé</h3>
+    <form method="post" action="/employees">
+        <div class="grid">
+            <label>Matricule
+                <input type="text" name="matricule" required>
+            </label>
+            <label>Nom
+                <input type="text" name="nom" required>
+            </label>
+            <label>Prénom
+                <input type="text" name="prenom" required>
+            </label>
+            <label>Catégorie
+                <select name="categorie" required>
+                    {% for cat in categories %}
+                        <option value="{{ cat.value }}">{{ cat.value }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label>Date entrée
+                <input type="date" name="date_entree" required>
+            </label>
+            <label>Date sortie
+                <input type="date" name="date_sortie">
+            </label>
+            <label>Régime (temps plein ou %)
+                <input type="text" name="regime" required>
+            </label>
+            <label>Brut mensuel de référence
+                <input type="number" step="0.01" name="brut_mensuel_ref" required>
+            </label>
+        </div>
+        <button type="submit">Ajouter</button>
+    </form>
+</section>
+
+<section class="card">
+    <h3>Liste</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Matricule</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Catégorie</th>
+                <th>Entrée</th>
+                <th>Sortie</th>
+                <th>Régime</th>
+                <th>Brut référence</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emp in employees %}
+            <tr>
+                <td>{{ emp.matricule }}</td>
+                <td>{{ emp.nom }}</td>
+                <td>{{ emp.prenom }}</td>
+                <td>{{ emp.categorie }}</td>
+                <td>{{ emp.date_entree }}</td>
+                <td>{{ emp.date_sortie or "-" }}</td>
+                <td>{{ emp.regime }}</td>
+                <td>{{ "%.2f"|format(emp.brut_mensuel_ref) }}</td>
+                <td class="actions">
+                    <a class="link" href="/employees/{{ emp.id }}/edit">Modifier</a>
+                    <a class="link" href="/employees/{{ emp.id }}/encodages">Encodages</a>
+                    <form method="post" action="/employees/{{ emp.id }}/delete" class="inline">
+                        <button type="submit" class="danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

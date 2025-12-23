@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Encodages mensuels - {{ employee.nom }} {{ employee.prenom }}</h2>
+<section class="card">
+    <h3>Nouvel encodage</h3>
+    <form method="post" action="/employees/{{ employee.id }}/encodages">
+        <div class="grid">
+            <label>Mois (AAAA-MM)
+                <input type="month" name="mois" required>
+            </label>
+            <label>Brut encodé
+                <input type="number" step="0.01" name="brut_encode" required>
+            </label>
+            <label>Commentaire
+                <input type="text" name="commentaire">
+            </label>
+        </div>
+        <button type="submit">Ajouter</button>
+    </form>
+</section>
+
+<section class="card">
+    <h3>Historique</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Mois</th>
+                <th>Brut encodé</th>
+                <th>Commentaire</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for enc in encodages %}
+            <tr>
+                <td>{{ enc.mois }}</td>
+                <td>{{ "%.2f"|format(enc.brut_encode) }}</td>
+                <td>{{ enc.commentaire or "-" }}</td>
+                <td>
+                    <form method="post" action="/encodages/{{ enc.id }}/delete">
+                        <button type="submit" class="danger">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="link" href="/employees">Retour</a>
+</section>
+{% endblock %}
