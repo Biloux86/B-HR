@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Vérification des saisies d'avance</h2>
+<section class="card">
+    <p>Plafond configuré : {{ "%.2f"|format(plafond) }} €</p>
+    <p>Taux d'avance estimé : {{ "%.2f"|format(taux_avance) }}</p>
+    <form method="post" action="/avances">
+        <div class="grid">
+            <label>Montant avance demandé
+                <input type="number" step="0.01" name="montant_avance" required>
+            </label>
+            <label>Brut mensuel de référence
+                <input type="number" step="0.01" name="brut_mensuel_ref" required>
+            </label>
+        </div>
+        <button type="submit">Vérifier</button>
+    </form>
+</section>
+
+{% if result %}
+<section class="card">
+    <h3>Résultat</h3>
+    <p><strong>Montant demandé :</strong> {{ "%.2f"|format(result.montant_avance) }} €</p>
+    <p><strong>Plafond autorisé :</strong> {{ "%.2f"|format(result.max_autorise) }} €</p>
+    <p><strong>Net estimé :</strong> {{ "%.2f"|format(result.net_estime) }} €</p>
+    <div class="alert {% if result.ok %}success{% else %}error{% endif %}">
+        {{ result.message }}
+    </div>
+</section>
+{% endif %}
+{% endblock %}

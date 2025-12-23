@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Modifier employé</h2>
+<section class="card">
+    <form method="post" action="/employees/{{ employee.id }}/edit">
+        <div class="grid">
+            <label>Matricule
+                <input type="text" name="matricule" required value="{{ employee.matricule }}">
+            </label>
+            <label>Nom
+                <input type="text" name="nom" required value="{{ employee.nom }}">
+            </label>
+            <label>Prénom
+                <input type="text" name="prenom" required value="{{ employee.prenom }}">
+            </label>
+            <label>Catégorie
+                <select name="categorie" required>
+                    {% for cat in categories %}
+                        <option value="{{ cat.value }}" {% if employee.categorie == cat.value %}selected{% endif %}>{{ cat.value }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <label>Date entrée
+                <input type="date" name="date_entree" required value="{{ employee.date_entree }}">
+            </label>
+            <label>Date sortie
+                <input type="date" name="date_sortie" value="{{ employee.date_sortie }}">
+            </label>
+            <label>Régime
+                <input type="text" name="regime" required value="{{ employee.regime }}">
+            </label>
+            <label>Brut mensuel de référence
+                <input type="number" step="0.01" name="brut_mensuel_ref" required value="{{ employee.brut_mensuel_ref }}">
+            </label>
+        </div>
+        <button type="submit">Enregistrer</button>
+        <a class="link" href="/employees">Retour</a>
+    </form>
+</section>
+{% endblock %}
